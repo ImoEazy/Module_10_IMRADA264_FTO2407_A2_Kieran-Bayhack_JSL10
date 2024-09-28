@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {//fetch book list from books.json
+document.addEventListener("DOMContentLoaded", () => {
     // 🪲 Bug: Incorrect ID used for attaching the event listener
     document.getElementById("solveRoom").addEventListener("click", () => {
         fetch('books.json') 
@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {//fetch book list from book
             .then(books => {
                 const mostRecentBook = findMostRecentBook(books);
                 // 🪲 Bug: Incorrect element ID
-                document.getElementById("resultRoom1").textContent = `The key to the next room is: ${mostRecentBook.title}`;
+                document.getElementById("room1Result").textContent = `The key to the next room is: ${mostRecentBook.title}`;
             });
     });
 
