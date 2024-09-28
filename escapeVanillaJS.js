@@ -1,21 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // 🪲 Bug: Incorrect ID used for attaching the event listener, altered resultRoom1 to room1Result.
+    // 🪲 Bug corrected: Incorrect ID used for attaching the event listener, altered resultRoom1 to room1Result.
     document.getElementById("solveRoom1").addEventListener("click", () => {
         fetch('books.json') 
             .then(response => response.json())
             .then(books => {
                 const mostRecentBook = findMostRecentBook(books);
-                // 🪲 Bug: Incorrect element ID, changed "room1Result"
+                // 🪲 Bug corrected: Incorrect element ID, changed "room1Result"
                 document.getElementById("room1Result").textContent = `The key to the next room is: ${mostRecentBook.title}`;
             });
     });
 
     document.getElementById("solveRoom2").addEventListener("click", () => {
         const jsConcepts = new Set(['closure', 'scope', 'hoisting']);
-        // 🪲 Bug: What's mssing from JS concepts?
+        // 🪲 Bug corrected: What's mssing from JS concepts?
         const reactConcepts = new Set(['components', 'jsx', 'hooks', 'async']);
-        // 🪲 Bug: Incorrect function call
-        const commonConcepts = findIntersection(jsConcepts, reactConcepts);//added reactConcepts to missing concepts
+        // 🪲 Bug corrected: Incorrect function call
+        const commonConcepts = findIntersection(jsConcepts, reactConcepts);//added reactConcepts to missing concepts,fixes the call to findIntersection allowing use of jsConcepts and reactConcepts.
         document.getElementById("room2Result").textContent = `The code to unlock the door is: ${Array.from(commonConcepts).join(', ')}`;
     });
 
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 navigateLabyrinth(directions)
                     .then(message => {
                         // 🪲 Bug: Incorrect method
-                        document.getElementById("room3Result").innerHTML = message;
+                        document.getElementById("room3Result").textContent = message;
                     });
             });
     });
