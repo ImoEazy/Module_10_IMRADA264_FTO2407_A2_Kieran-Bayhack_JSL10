@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {//fetch book list from books.json
     // 🪲 Bug: Incorrect ID used for attaching the event listener
     document.getElementById("solveRoom").addEventListener("click", () => {
         fetch('books.json') 
