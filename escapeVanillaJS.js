@@ -35,12 +35,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function findMostRecentBook(books) {
     // 🪲 Bug corrected: Logic error // corrected to find most recent book 'book.published >(greater) mostRecent.published
-    return books.reduce((mostRecent, book) => new Date(book.published) new Date(mostRecent.published) ? book : mostRecent);
+    return books.reduce((mostRecent, book) => new Date(book.published) > new Date(mostRecent.published) ? book : mostRecent);
 }
 
 function findIntersection(setA, setB) {
     // 🪲 Bug corrected: Incorrect logic
-    const intersection = new Set([...setA].filter(item => setB.has(item)))//use filter method for setB items
+    const intersection = new Set([...setA](item => setB.has(item)))//use filter method for setB items
     return intersection;
 }
 
