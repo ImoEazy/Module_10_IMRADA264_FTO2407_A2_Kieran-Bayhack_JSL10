@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 navigateLabyrinth(directions)
                     .then(message => {
                         // 🪲 Bug corrected: Incorrect method
-                        document.getElementById("room3Result").textContest = message; //replaced get with '.textContent'
+                        document.getElementById("room3Result").textContent = message; //replaced get with '.textContent'
                     });
             });
     });
@@ -40,7 +40,7 @@ function findMostRecentBook(books) {
 
 function findIntersection(setA, setB) {
     // 🪲 Bug corrected: Incorrect logic
-    const intersection = new Set([...setA](item => setB.has(item)))//use filter method for setB items
+    const intersection = new Set([...setA].filter(item => setB.has(item)))//use filter method for setB items
     return intersection;
 }
 
