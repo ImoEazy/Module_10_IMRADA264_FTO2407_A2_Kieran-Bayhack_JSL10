@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function findMostRecentBook(books) {
     // 🪲 Bug corrected: Logic error // corrected to find most recent book 'book.published >(greater) mostRecent.published
-    return books.reduce((mostRecent, book) => new Date(book.published) > new Date(mostRecent.published) ? book : mostRecent);
+    return books.reduce((mostRecent, book) => new Date(book.published) new Date(mostRecent.published) ? book : mostRecent);
 }
 
 function findIntersection(setA, setB) {
